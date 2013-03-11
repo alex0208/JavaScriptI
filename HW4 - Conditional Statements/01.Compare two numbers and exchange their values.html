@@ -28,13 +28,15 @@
 		function onFindBiggerButtonClick() {
 			var first = jsConsole.readFloat("#tb-first");
 			var second = jsConsole.readFloat("#tb-second");
-			var bigger = first;
+			var buffer;
 
-			if (bigger < second) {
-				bigger = second;
+			if (first > second) {
+				buffer = first;
+				first = second;
+				second = buffer;
 			}
 
-			jsConsole.writeLine("the bigger is: " + bigger);
+			jsConsole.writeLine("the bigger is: " + second);
 		}											
 	</script>			  
 </body>

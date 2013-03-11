@@ -75,6 +75,8 @@
                             case 1: jsConsole.write("eleven"); break;
                             case 2: jsConsole.write("twelve"); break;
                             case 3: jsConsole.write("thirteen"); break;
+                            case 5: jsConsole.write("fifteen"); break;
+                            case 8: jsConsole.write("eighteen"); break;
                             default: jsConsole.write(returnTextnumber(edenici) + "teen"); break;
                         }
                     }
@@ -85,6 +87,14 @@
                     else if (desetici == 3)
                     {
                         jsConsole.write("thirty ");
+                    }
+					else if (desetici == 5)
+                    {
+                        jsConsole.write("fifty ");
+                    }
+					else if (desetici == 8)
+                    {
+                        jsConsole.write("eighty ");
                     }
                     else
                         jsConsole.write(returnTextnumber(desetici) + "ty ");

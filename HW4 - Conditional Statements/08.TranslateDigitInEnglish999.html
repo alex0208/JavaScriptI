@@ -69,6 +69,10 @@
                 {
                     if (desetici == 1)
                     {
+						if(stotici != 0)
+						{
+							jsConsole.write("and ");
+						}
                         switch (edenici)
                         {
                             case 0: jsConsole.write("ten"); break;
@@ -102,6 +106,10 @@
                 }
                 if (edenici != 0 && desetici != 1)
                 {
+					if(stotici != 0 && desetici == 0)
+						{
+							jsConsole.write("and ");
+						}
                     jsConsole.write(returnTextnumber(edenici));
                 }
                 jsConsole.writeLine("");

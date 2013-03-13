@@ -58,11 +58,15 @@
 			            jsConsole.writeLine("There is no real roots");
 			        }
 			    }
-			    else {
+			    else if(b != 0)
+				{
 			        x1 = (-c) / b;
 			        jsConsole.writeLine("x1,2 = " + x1);
 			    }
-
+				else
+				{
+					jsConsole.writeLine("No quadratic equation");
+				}
 			}
 
 		}											

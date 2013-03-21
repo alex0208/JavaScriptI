@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Insert numbers separated by ',': </label>
+			<input type="text" id="tb-first"/>
+		</div>	
+		<div class="input">
+			<label for="tb-second">Insert number for search: </label>
+			<input type="text" id="tb-second"/>
+		</div>			
+		<div id="inputbutton">
+			<a href="#" onclick="onMaxEqualSequenceButtonClick()">Binary Search</a>
+		</div>
+	</div>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>														 
+
+		function onMaxEqualSequenceButtonClick() {
+			var FirstArray = jsConsole.readNumbersArray("#tb-first", ',');
+			var searchedNumber = jsConsole.readInteger("#tb-second", ',');
+			
+			FirstArray.sort(orderBy);
+			jsConsole.write('Sorted array is {');
+			jsConsole.write(FirstArray.join(','));
+			jsConsole.writeLine('}');
+			var result = BinarySearch(FirstArray, searchedNumber);
+			if(result === -1)
+			{
+				jsConsole.writeLine(searchedNumber + " is not existing in given array");
+			}
+			else
+			{
+				jsConsole.writeLine("Index of searched element is " + result);
+			}
+
+		}	
+		function orderBy(a,b){
+			return (a == b)? 0 : (a>b)? 1: -1
+		};
+		function BinarySearch(FirstArray, searchedNumber){
+		var MaxElement = FirstArray.length - 1;
+			var MinElement = 0;
+			while (MaxElement >= MinElement)
+			{
+				var Midpoint = parseInt((MinElement + MaxElement) / 2);
+				if (FirstArray[Midpoint] < searchedNumber)
+				{
+					MinElement = Midpoint + 1;
+				}
+				else if (FirstArray[Midpoint] > searchedNumber)
+				{
+					MaxElement = Midpoint - 1;
+				}
+				else
+				{
+					return Midpoint;
+				}
+			}
+			return -1;
+		}
+
+	</script>			  
+</body>
+</html>

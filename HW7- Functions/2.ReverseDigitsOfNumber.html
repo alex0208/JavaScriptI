@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Insert number: </label>
+			<input type="text" id="tb-first"/>
+		</div>	
+		<div id="inputbutton">
+			<a href="#" onclick="onFindBiggerButtonClick()">Reverse Number</a>
+		</div>
+	</div>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>														 
+
+		function onFindBiggerButtonClick() {
+			var number = jsConsole.readFloat("#tb-first");
+
+			jsConsole.writeLine(ReveerseDecimalNumber(number));
+		}	
+		function ReveerseDecimalNumber(number) {
+			var str = number.toString();
+			var result = "";
+			var i;
+			for (i = str.length - 1; i >= 0; i--)
+			{
+				result += (str.substr(i, 1));
+			}
+			return result;
+		}
+	</script>			  
+</body>
+</html>
